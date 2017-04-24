@@ -1,0 +1,19 @@
+package com.example.readinglist;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@Controller
+@RequestMapping("/")
+public class LoginController {
+
+	 @RequestMapping(value = "/login", method = RequestMethod.POST)
+	 public String login(@PathVariable("username") String username, @PathVariable("password") String password, Model model) {
+		 System.out.println(username + "   " + password); 
+		 return "login";
+	 }
+	
+}
